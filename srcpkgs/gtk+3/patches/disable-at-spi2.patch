@@ -1,0 +1,31 @@
+https://bbs.archlinux.org/viewtopic.php?id=237697
+https://bugs.gentoo.org/669234
+https://669234.bugs.gentoo.org/attachment.cgi?id=552180
+--- a/gtk/a11y/gtkaccessibility.c	2024-11-14 02:04:34.475599478 +0100
++++ b/gtk/a11y/gtkaccessibility.c	2024-11-14 02:03:50.108595687 +0100
+@@ -37,9 +37,9 @@
+ #include <gtk/gtktogglebutton.h>
+ #include <gtk/gtkaccessible.h>
+ 
+-#ifdef GDK_WINDOWING_X11
+-#include <atk-bridge.h>
+-#endif
++//#ifdef GDK_WINDOWING_X11
++//#include <atk-bridge.h>
++//#endif
+ 
+ static gboolean gail_focus_watcher      (GSignalInvocationHint *ihint,
+                                          guint                  n_param_values,
+@@ -986,9 +986,9 @@
+   _gtk_accessibility_override_atk_util ();
+   do_window_event_initialization ();
+ 
+-#ifdef GDK_WINDOWING_X11
+-  atk_bridge_adaptor_init (NULL, NULL);
+-#endif
++//#ifdef GDK_WINDOWING_X11
++//  atk_bridge_adaptor_init (NULL, NULL);
++//#endif
+ 
+   atk_misc_instance = g_object_new (GTK_TYPE_MISC_IMPL, NULL);
+ }
