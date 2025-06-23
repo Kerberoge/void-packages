@@ -36,3 +36,8 @@ gtk-vnc-devel_package() {
 		fi
 	}
 }
+
+gvncviewer_package() {
+	short_desc="Demo application for gtk-vnc"
+	vbin build/examples/gvncviewer
+}
